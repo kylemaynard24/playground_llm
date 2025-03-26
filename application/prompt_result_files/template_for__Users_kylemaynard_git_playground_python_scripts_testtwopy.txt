@@ -1,0 +1,11 @@
+
+  This is a template file used to test the Python scripts in the /Users/kylemaynard/git_playground/application/templated_prompts directory. It is a simple script that takes no arguments and outputs "Hello World!" to the console.
+
+To run this script, simply execute it from the command line or terminal using the following command:
+```bash
+python testtwopy.py
+```
+This will output the string "Hello World!" to the console.
+
+Note: This script is just a simple example of how to use Python and does not demonstrate any advanced functionality. For more complex examples, please see the other files in this directory.
+

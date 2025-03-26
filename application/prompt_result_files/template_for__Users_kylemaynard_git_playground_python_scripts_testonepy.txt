@@ -1,0 +1,8 @@
+
+Here is the contents of the file:
+```
+# This is a comment
+print("Hello, World!")
+```
+This file contains a simple Python script that prints "Hello, World!" to the console. It includes a comment on the first line explaining what the script does.
+

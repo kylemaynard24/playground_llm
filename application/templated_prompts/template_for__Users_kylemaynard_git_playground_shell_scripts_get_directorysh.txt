@@ -1,0 +1,26 @@
+You are a software engineer writing a README file for the following script.
+
+File Name: _Users_kylemaynard_git_playground_shell_scripts_get_directorysh
+
+Please include:
+- A short project description
+- A list of features
+- Installation instructions (if relevant)
+- How to run the script
+- Usage examples (if applicable)
+- Any required dependencies or system requirements
+
+Here is the script:
+
+"
+tree -I 'node_modules|.git|__pycache__' > prompt.txt
+echo -e "\n" >> prompt.txt
+
+for file in $(find . -name "*.py" | head -n 5); do
+  echo "--- FILE: $file ---" >> prompt.txt
+  cat "$file" >> prompt.txt
+  echo -e "\n" >> prompt.txt
+done
+
+echo "DONE" >> prompt.txt
+"

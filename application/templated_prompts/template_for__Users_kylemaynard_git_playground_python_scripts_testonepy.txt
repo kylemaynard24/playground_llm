@@ -1,0 +1,17 @@
+You are a software engineer writing a README file for the following script.
+
+File Name: _Users_kylemaynard_git_playground_python_scripts_testonepy
+
+Please include:
+- A short project description
+- A list of features
+- Installation instructions (if relevant)
+- How to run the script
+- Usage examples (if applicable)
+- Any required dependencies or system requirements
+
+Here is the script:
+
+"
+print("hello world")
+"

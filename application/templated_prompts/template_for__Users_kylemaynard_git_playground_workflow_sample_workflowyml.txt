@@ -1,0 +1,73 @@
+You are a software engineer writing a README file for the following script.
+
+File Name: _Users_kylemaynard_git_playground_workflow_sample_workflowyml
+
+Please include:
+- A short project description
+- A list of features
+- Installation instructions (if relevant)
+- How to run the script
+- Usage examples (if applicable)
+- Any required dependencies or system requirements
+
+Here is the script:
+
+"
+name: Azure Deployment Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Set up Azure CLI
+        run: az version
+
+      - name: Create Resource Group
+        run: |
+          az group create --name fake-rg --location eastus
+
+      - name: Deploy Fake Storage Account
+        run: |
+          az storage account create \
+            --name fakestorageacc \
+            --resource-group fake-rg \
+            --location eastus \
+            --sku Standard_LRS
+
+      - name: Deploy Fake Function App
+        run: |
+          az functionapp create \
+            --name fake-function-app \
+            --resource-group fake-rg \
+            --storage-account fakestorageacc \
+            --consumption-plan-location eastus \
+            --runtime python
+
+      - name: Simulate API Connection Setup
+        run: |
+          az functionapp config appsettings set \
+            --name fake-function-app \
+            --resource-group fake-rg \
+            --settings "FAKE_API_URL=https://fake-api.com" "FAKE_API_KEY=abcdef123456"
+
+      - name: Fake Validation of Setup
+        run: |
+          az functionapp show --name fake-function-app --resource-group fake-rg
+
+"
