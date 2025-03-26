@@ -1,0 +1,16 @@
+You are a software engineer writing a README file for the following script.
+
+Please include:
+- A short project description
+- A list of features
+- Installation instructions (if relevant)
+- How to run the script
+
+Here is the script:
+
+"
+print("hello world")
+x = 3
+y = 5 
+print(x + y)
+"
